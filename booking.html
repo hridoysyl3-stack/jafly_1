@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Turf | JAFLY Sports Complex, Jaflong, Sylhet</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span>📍 Ballaghat Road, Jaflong, Gowainghat, Sylhet</span>
+        <span>📞 +880 1711-987654</span>
+      </div>
+      <div>
+        <span>🕒 Open Daily: 10:00 AM – 12:00 AM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-crest">JF</div>
+        <div class="logo-text">
+          <span class="logo-title">JAFLY SPORTS</span>
+          <span class="logo-sub">Jaflong • Sylhet</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="booking.html" class="active">Book Turf</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="cafe.html">Café</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag">Real-Time Slot Selector</span>
+      <h1>Book Your Turf Slot</h1>
+      <p>Select your match date and preferred 1-hour time slots below. Day slots (10 AM–5 PM) are ৳1,000/hr and Night Floodlight slots (5 PM–12 AM) are ৳1,200/hr.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Booking Engine -->
+  <section class="section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <!-- Left Column: Date & 14 1-Hour Time Slots -->
+        <div class="booking-panel">
+          <div class="booking-controls-bar">
+            <div class="date-picker-group">
+              <label for="bookingDate">1. Select Match Date</label>
+              <input type="date" id="bookingDate" class="form-input" style="max-width: 240px;" />
+            </div>
+
+            <div class="slot-legend">
+              <div class="legend-item"><span class="legend-box legend-available"></span> Available</div>
+              <div class="legend-item"><span class="legend-box legend-selected"></span> Selected</div>
+              <div class="legend-item"><span class="legend-box legend-booked"></span> Booked (Locked)</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.25rem;">2. Select 1-Hour Time Slot(s) (10:00 AM – 12:00 AM)</h3>
+            <button type="button" id="resetDemoBtn" class="btn btn-dark btn-sm" title="Reset local demo bookings">Reset Demo Slots</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--gray-muted); margin-top: 0.25rem;">
+            Click one or multiple consecutive slots to book back-to-back hours. Booked slots are automatically locked to prevent double booking.
+          </p>
+
+          <!-- Dynamic 14 Slots Grid rendered by script.js -->
+          <div id="slotsGrid" class="slots-grid"></div>
+          <p id="slotError" class="error-msg">⚠ Please select at least one available time slot above.</p>
+        </div>
+
+        <!-- Right Column: Customer Form & Automatic Price Summary -->
+        <div class="booking-panel">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">3. Player Details & Summary</h3>
+
+          <div style="background: var(--charcoal-elevated); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+            <div class="summary-line">
+              <span>Selected Date:</span>
+              <strong id="summaryDate">—</strong>
+            </div>
+            <div class="summary-line" style="flex-direction: column; gap: 0.35rem;">
+              <span>Selected Time Slots:</span>
+              <div id="summarySlots">No slots selected yet</div>
+            </div>
+            <div class="summary-line">
+              <span>Total Duration:</span>
+              <strong id="summaryHours">0 Hours</strong>
+            </div>
+            <div class="summary-total">
+              <span>Total Amount:</span>
+              <span id="summaryTotal" style="color: #FF6B84;">৳0</span>
+            </div>
+          </div>
+
+          <form id="turfBookingForm" novalidate>
+            <div class="form-group">
+              <label for="customerName">Full Name *</label>
+              <input type="text" id="customerName" class="form-input" placeholder="e.g., Tariqul Islam Chowdhury" required />
+              <div id="nameError" class="error-msg">Please enter your full name (minimum 3 characters).</div>
+            </div>
+
+            <div class="form-group">
+              <label for="customerPhone">Phone Number (Bangladesh) *</label>
+              <input type="tel" id="customerPhone" class="form-input" placeholder="e.g., 01711223344 or +8801711223344" required />
+              <div id="phoneError" class="error-msg">Enter a valid 11-digit Bangladesh mobile number (013–019XXXXXXXX).</div>
+            </div>
+
+            <div class="form-group">
+              <label for="customerTeam">Team / Group Name (Optional)</label>
+              <input type="text" id="customerTeam" class="form-input" placeholder="e.g., Jaflong Warriors FC" />
+            </div>
+
+            <div class="form-group">
+              <label for="matchFormat">Match Format</label>
+              <select id="matchFormat" class="form-select">
+                <option value="7-a-side Full Turf">7-a-side Full Turf</option>
+                <option value="6-a-side Standard">6-a-side Standard</option>
+                <option value="Academy / Coaching Session">Academy / Coaching Session</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Confirm Turf Booking →</button>
+          </form>
+
+          <!-- Instant Booking Confirmation Receipt -->
+          <div id="bookingConfirmation" class="confirmation-box"></div>
+        </div>
+
+      </div>
+
+      <!-- Clear Technical Explanation of Demo vs Production Architecture -->
+      <div class="architecture-note">
+        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #FF6B84;">ℹ️ How This Booking System Works & Production Upgrade Path</h3>
+        <p style="font-size: 0.92rem; color: var(--gray-light); margin-bottom: 0.85rem;">
+          <strong>Current Demo Mode (Client-Side Persistence):</strong> This page runs a fully interactive booking engine powered by Vanilla JavaScript and browser <code>localStorage</code>. When you book a slot, it validates your Bangladeshi phone number, calculates the exact Taka (৳) rate based on daytime (৳1,000) vs. evening floodlights (৳1,200), generates a booking reference, and permanently locks that slot on your browser for the chosen date so it cannot be double-booked.
+        </p>
+        <p style="font-size: 0.92rem; color: var(--gray-light);">
+          <strong>What is Needed for Live Multi-User Production Reservations:</strong>
+        </p>
+        <ul style="font-size: 0.88rem; color: var(--gray-muted); margin-top: 0.5rem; display: grid; gap: 0.35rem; list-style: disc; padding-left: 1.4rem;">
+          <li><strong>Backend API & Database:</strong> A Node.js/Express, Laravel, or Firebase/Supabase backend with a PostgreSQL or MySQL table (<code>bookings</code>) enforcing a unique composite constraint on <code>UNIQUE(booking_date, slot_id)</code> to prevent concurrent double bookings across different devices.</li>
+          <li><strong>Bangladesh Payment Gateway (SSLCommerz / bKash / Nagad):</strong> Integrating bKash Tokenized Checkout or SSLCommerz to collect a minimum ৳500 advance deposit before marking a slot as confirmed.</li>
+          <li><strong>Automated SMS Confirmation:</strong> Connecting a Bangladeshi Bulk SMS gateway (e.g., Greenweb, Alpha SMS, or SSL Wireless) to send the <code>JF-XXXXXX</code> booking code directly to the customer's mobile number.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-crest">JF</div>
+            <div class="logo-text">
+              <span class="logo-title">JAFLY SPORTS</span>
+              <span class="logo-sub">Jaflong • Sylhet</span>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem;">Sylhet's premier sports and recreation destination in Jaflong.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Book a Turf</a></li>
+            <li><a href="pricing.html">Pricing & Packages</a></li>
+            <li><a href="facilities.html">Our Facilities</a></li>
+            <li><a href="cafe.html">JAFLY Dugout Café</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="tournaments.html">Tournaments</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact & Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <p style="font-size: 0.9rem;">📍 Ballaghat Road, Jaflong, Sylhet</p>
+          <p style="font-size: 0.9rem;">📞 +880 1711-987654</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 JAFLY Sports Complex, Jaflong, Sylhet. All rights reserved.</span>
+        <span>Bangladesh Taka (৳) Official Pricing</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

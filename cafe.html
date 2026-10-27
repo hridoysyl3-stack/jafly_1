@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JAFLY Dugout Café Menu | Burgers, Snacks, Coffee & Drinks in Jaflong</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span>📍 Ballaghat Road, Jaflong, Gowainghat, Sylhet</span>
+        <span>📞 Café Direct: +880 1819-456789</span>
+      </div>
+      <div><span>🕒 Café Hours: 10:00 AM – 12:00 AM</span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-crest">JF</div>
+        <div class="logo-text">
+          <span class="logo-title">JAFLY SPORTS</span>
+          <span class="logo-sub">Jaflong • Sylhet</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Turf</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="cafe.html" class="active">Café</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag">Pitch-Side Dining & Refreshments</span>
+      <h1>JAFLY Dugout Café Menu</h1>
+      <p>Freshly grilled burgers, crispy matchday platters, artisan coffee, and chilled mocktails served right beside the turf.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Café Menu Section -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter-group="cafe" data-filter="all">All Menu Items (12)</button>
+        <button class="filter-btn" data-filter-group="cafe" data-filter="burgers">Burgers & Wraps</button>
+        <button class="filter-btn" data-filter-group="cafe" data-filter="snacks">Matchday Snacks & Platters</button>
+        <button class="filter-btn" data-filter-group="cafe" data-filter="cold">Cold Drinks & Mocktails</button>
+        <button class="filter-btn" data-filter-group="cafe" data-filter="hot">Sylheti Tea & Hot Coffee</button>
+      </div>
+
+      <!-- Menu Cards Grid -->
+      <div class="grid-3">
+
+        <!-- 1. Burgers & Wraps -->
+        <div class="card" data-item-group="cafe" data-category="burgers">
+          <div class="card-img-wrap">
+            <span class="card-badge">Bestseller</span>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80" alt="JAFLY Striker Double Beef Burger" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Striker Double Smash Burger</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳320</strong>
+            </div>
+            <p class="card-text">Double flame-grilled beef patties, melted cheddar, caramelized onions, house Naga-mayo, and brioche bun.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="burgers">
+          <div class="card-img-wrap">
+            <span class="card-badge">Spicy</span>
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80" alt="Crispy Zinger Chicken Burger" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Naga Crispy Chicken Zinger</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳260</strong>
+            </div>
+            <p class="card-text">Crunchy buttermilk chicken breast tossed in Sylheti Naga glaze with iceberg lettuce and cheese slice.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="burgers">
+          <div class="card-img-wrap">
+            <span class="card-badge">High Protein</span>
+            <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=700&q=80" alt="Smoky Chicken Shawarma Wrap" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Dugout Grilled Chicken Wrap</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳220</strong>
+            </div>
+            <p class="card-text">Charcoal-marinated chicken strips, garlic toum, pickled cucumber, and fries wrapped in toasted tortilla.</p>
+          </div>
+        </div>
+
+        <!-- 2. Snacks & Platters -->
+        <div class="card" data-item-group="cafe" data-category="snacks">
+          <div class="card-img-wrap">
+            <span class="card-badge">Team Share</span>
+            <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=700&q=80" alt="Peri Peri Wings" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">6pc Peri-Peri Buffalo Wings</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳280</strong>
+            </div>
+            <p class="card-text">Crispy jumbo chicken wings glazed in smoky peri-peri sauce served with ranch dip.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="snacks">
+          <div class="card-img-wrap">
+            <span class="card-badge">Crowd Favorite</span>
+            <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=700&q=80" alt="Loaded Meatbox" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">JAFLY Monster Meatbox</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳310</strong>
+            </div>
+            <p class="card-text">Crinkle-cut fries topped with roasted chicken chunks, chicken sausages, melted mozzarella, and secret sauce.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="snacks">
+          <div class="card-img-wrap">
+            <span class="card-badge">For 4 Players</span>
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Champions Squad Platter" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Half-Time Squad Platter (Serves 4)</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳980</strong>
+            </div>
+            <p class="card-text">4 Mini Sliders, 8 BBQ Wings, Large Masala Fries, Coleslaw, and 4 Chilled Soft Drinks.</p>
+          </div>
+        </div>
+
+        <!-- 3. Cold Drinks & Mocktails -->
+        <div class="card" data-item-group="cafe" data-category="cold">
+          <div class="card-img-wrap">
+            <span class="card-badge">Hydration</span>
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=80" alt="Blue Lagoon Mocktail" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Piyain Blue Lagoon Cooler</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳180</strong>
+            </div>
+            <p class="card-text">Sparkling citrus, blue curaçao syrup, crushed ice, and fresh mint leaves from Jaflong.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="cold">
+          <div class="card-img-wrap">
+            <span class="card-badge">Energy Boost</span>
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=80" alt="Oreo Protein Shake" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Belgian Chocolate & Oreo Shake</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳240</strong>
+            </div>
+            <p class="card-text">Thick dairy milkshake blended with Oreo crumbles, whipped cream, and chocolate drizzle.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="cold">
+          <div class="card-img-wrap">
+            <span class="card-badge">Electrolytes</span>
+            <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=700&q=80" alt="Fresh Lime Soda" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Sylheti Ada-Lebu Electrolyte Fizz</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳130</strong>
+            </div>
+            <p class="card-text">Fresh aromatic Sylheti Ada Lebu (citrus), pink Himalayan salt, mint, and chilled soda.</p>
+          </div>
+        </div>
+
+        <!-- 4. Hot Coffee & Sylheti Tea -->
+        <div class="card" data-item-group="cafe" data-category="hot">
+          <div class="card-img-wrap">
+            <span class="card-badge">Local Specialty</span>
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=700&q=80" alt="Sylhet Seven Layer Tea" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Sylheti 7-Layer Rainbow Tea</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳140</strong>
+            </div>
+            <p class="card-text">Authentic seven-layered spiced tea crafted with organic leaves from Jaflong and Tamabil tea gardens.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="hot">
+          <div class="card-img-wrap">
+            <span class="card-badge">Fresh Brew</span>
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Caramel Cappuccino" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Roasted Hazelnut Cappuccino</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳190</strong>
+            </div>
+            <p class="card-text">Double shot Arabica espresso topped with velvety micro-foam and roasted hazelnut aroma.</p>
+          </div>
+        </div>
+
+        <div class="card" data-item-group="cafe" data-category="hot">
+          <div class="card-img-wrap">
+            <span class="card-badge">Winter Favorite</span>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80" alt="Masala Malai Chai" />
+          </div>
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Saffron & Cardamom Malai Chai</h3>
+              <strong style="font-family:'Oswald',sans-serif; font-size:1.35rem; color:#FF6B84;">৳90</strong>
+            </div>
+            <p class="card-text">Slow-simmered clay-cup milk tea infused with cardamom, cinnamon, and thick malai cream.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 JAFLY Sports Complex & Dugout Café, Jaflong, Sylhet.</span>
+        <span>10% Café Discount for All Floodlight Turf Bookings!</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
